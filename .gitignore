@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.chroma/
+outputs/drafts/*.txt
+logs/*.jsonl
+.adk/

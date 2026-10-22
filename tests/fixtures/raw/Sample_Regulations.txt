@@ -1,0 +1,11 @@
+SAMPLE ACADEMIC REGULATIONS (synthetic test fixture)
+
+Section 7. Attendance
+7.1 A student must have a minimum of 75% attendance in a course to be eligible to appear in the Major examination of that course.
+7.2 Students with attendance below 75% will be awarded an F grade in the course.
+
+Section 9. Makeup Examination
+9.1 A student who misses the Major examination on medical grounds may apply to the course instructor for a makeup examination within 7 days, along with a medical certificate.
+
+Section 4. Credit Requirements for B.Tech.
+4.3 A B.Tech. student must earn at least 12 credits of Open Electives to qualify for the degree.

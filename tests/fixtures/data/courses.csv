@@ -1,0 +1,6 @@
+course_code,course_name,department,category,credits,slot,instructor
+CSL7570,Autonomous Systems,Computer Science and Engineering,Program Elective,3,B,Dr. Test Instructor
+HSL4010,Ethics in Technology,Humanities and Social Sciences,HSS Elective,3,C,Dr. Alpha Beta
+HSL4020,Indian Philosophy,Humanities and Social Sciences,HSS Elective,3,D,Dr. Gamma Delta
+HSL2010,Introduction to Economics,Humanities and Social Sciences,HSS Elective,3,C,Dr. Alpha Beta
+CSL1010,Introduction to Programming,Computer Science and Engineering,Core,4,A,Dr. Test Instructor
