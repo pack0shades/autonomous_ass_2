@@ -1,1 +1,43 @@
-course_code,course_name,department,category,credits,slot,instructor
+course_code,course_name,department,category,credits,slot,instructor,meetings,room
+CSL4100,Artificial Intelligence,Computer Science and Engineering,elective,3,,Romi Banerjee,Tue 10:00-10:50; Wed 09:00-09:50; Fri 09:00-09:50,LHC 110
+IDL4010,Autonomous Systems,Interdisciplinary Research Platform - Robotics and Mobility Systems,elective,3,,Anoop Jain,Tue 11:00-11:50; Thu 11:00-11:50; Fri 11:00-11:50,LHC 106
+ECL4010,Operations Research for Economics,Economics,elective,3,,S Srivatsa Srinivas,Mon 11:00-11:50; Wed 11:00-11:50; Fri 10:00-10:50,LHC 206
+SML3010,Introduction to Business and Management,School of Management and Entrepreneurship,elective,3,,Ansita Aggarwal,Mon 12:00-12:50; Wed 12:00-12:50; Fri 12:00-12:50,LHC 308
+CSL4180,Computational Game Theory,Computer Science and Engineering,elective,3,,Aditi Sethia,Tue 16:00-16:50; Thu 16:00-16:50; Fri 16:00-16:50,LHC 204
+ESL4010,Environmental Science,Environment and Sustainability Engineering,institute_core,2,,Navinya Dilip Chimurkar,Tue 12:00-12:50; Thu 12:00-12:50,LHC 110
+CSL2010,Maths for Computing,Computer Science and Engineering,programme_core,4,C,Vimal Raj Sharma,,LHC 101
+CSL2020,Data Structures and Algorithms,Computer Science and Engineering,programme_core,4,A,Tanmay Inamdar,,LHC 102
+CSL3010,Design and Analysis of Algorithms,Computer Science and Engineering,programme_core,4,C,Pallavi Jain,,LHC 103
+CSL3020,Computer Architecture,Computer Science and Engineering,programme_core,3,I,Palash Das,,LHC 104
+CSL3030,Operating Systems,Computer Science and Engineering,programme_core,4,F,Nitin Awathare,,LHC 104
+CSL3040,Principles of Programming Languages,Computer Science and Engineering,programme_core,3,K,Mohit Kumar Jangid,,LHC 105
+CSL3050,Database Systems,Computer Science and Engineering,programme_core,4,G,Sumit Kalra,,LHC 105
+CSP4010,B.Tech. Project,Computer Science and Engineering,project,3,,Gaurav Harit,,By arrangement
+CSL7010,Randomized Algorithms,Computer Science and Engineering,core_bouquet,3,C,Tanmay Inamdar,,LHC 201
+EEL4010,VLSI Design,Electrical Engineering,core_bouquet,3,C,Binod Kumar,,LHC 202
+CSL4110,Deep Learning,Computer Science and Engineering,elective,3,A,Mayank Vatsa,,LHC 203
+CSL4120,Dependable Artificial Intelligence,Computer Science and Engineering,elective,3,I,Richa Singh,,LHC 203
+CSL4130,Computer Vision,Computer Science and Engineering,elective,3,C,Anand Mishra,,LHC 204
+CSL4140,Cryptography and Network Security,Computer Science and Engineering,elective,3,F,Susil Kumar Mohanty,,LHC 204
+CSL4150,Advanced Data Structures,Computer Science and Engineering,elective,3,G,Pallavi Jain,,LHC 205
+CSL4160,Quantum Computing,Computer Science and Engineering,elective,3,K,Vimal Raj Sharma,,LHC 205
+CSL7110,Information Retrieval,Computer Science and Engineering,elective,3,I,Deeksha Varshney,,LHC 206
+CSL7120,Virtualization and Cloud Computing,Computer Science and Engineering,elective,3,A,Sidharth Sharma,,LHC 208
+CSL7130,Introduction to Blockchain,Computer Science and Engineering,elective,3,A,Nitin Awathare,,LHC 209
+CSL7140,Compiler Design,Computer Science and Engineering,elective,3,K,Dip Sankar Banerjee,,LHC 207
+CSL7570,Natural Language Understanding,Computer Science and Engineering,elective,3,F,Sidharth Ranjan,,LHC 208
+IDL7010,Planning and Decision Making for Robots,Interdisciplinary Research Platform - Robotics and Mobility Systems,elective,3,K,Saurav Kumar,,LHC 209
+EEL4020,Embedded Systems,Electrical Engineering,elective,3,K,Niladri Sekhar Tripathy,,LHC 210
+EEL7010,High-Level Synthesis,Electrical Engineering,elective,3,A,Palash Das,,LHC 210
+AIL4010,Microeconomics I (AIDE-CMCE),School of Artificial Intelligence and Data Science,hss_elective,3,G,Dweepobotee Brahma,,LHC 302
+HSL2110,Creative Writing,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,G,Kanak Yadav,,LHC 303
+HSL3070,Indian Societies: A Sociological Introduction,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,A,Bhaskar Kumar Kakati,,LHC 303
+HSL3060,Development and Environment,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,A,Vidya Sarveswaran,,LHC 304
+HSL4010,Fundamentals of Logic,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,F,V Hari Narayanan,,LHC 304
+HSL4020,Philosophical Problems,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,G,K J George,,LHC 305
+HSL4030,"Disaster, Risk Reduction and Management",School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,I,Farhat Naz,,LHC 304
+HSL4070,Health Economics,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,F,Alok Ranjan,,LHC 306
+HSL4110,Urban Sociology,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,G,Prasenjeet A Tribhuvan,,LHC 306
+HSL4120,Law and Society,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,I,Sherin Sabu,,LHC 307
+HSL4130,Theories of Justice,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,K,Tonisha Guin,,LHC 307
+HSL7460,Political and Institutional Economics of Development,School of Liberal Arts (Humanities and Social Sciences),hss_elective,3,G,Akanksha Choudhary,,LHC 308

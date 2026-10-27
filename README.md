@@ -9,7 +9,14 @@ Built with **Google ADK**, with local LLMs served by **Ollama** through ADK's **
 **ChromaDB** + `nomic-embed-text` embeddings for RAG, and CSV tables for the timetable and faculty directory.
 Runs on a 16 GB RAM laptop.
 
-**Team:** TODO: names and roll numbers
+**Team:**
+
+| Name | Roll number |
+| --- | --- |
+| Aradhya Mahajan | B23CS1088 |
+| Pragay | B23ES1024 |
+| Vyom Shah | B23CM1058 |
+| Priyanshu Pandey | B24BB1029 |
 
 ## Architecture
 

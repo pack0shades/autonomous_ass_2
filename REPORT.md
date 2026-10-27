@@ -1,6 +1,6 @@
 # Academic Helpdesk Agent: Report
 
-**Team:** TODO: names and roll numbers
+**Team:** Aradhya Mahajan (B23CS1088), Pragay (B23ES1024), Vyom Shah (B23CM1058), Priyanshu Pandey (B24BB1029)
 
 > STATUS: the system design and evaluation method below are final. The Results and Findings sections are
 > filled in from `eval/results/summary.md` after the evaluation has been run on the collected documents.
@@ -57,8 +57,65 @@ human to answer.
 
 ## 3. Documents
 
-TODO: table of the documents in `docs/raw/` (name, type, pages, what it covers) and of the CSV tables,
-plus how personal data was replaced with dummy values.
+**Unstructured corpus (`docs/raw/`): 29 documents.** All were fetched from the public IIT Jodhpur
+website / academic intranet on 2026-10-26; `docs/manifest.csv` records the title, category, source URL,
+fetch date, page count and SHA-256 of each. The four scanned circulars (attendance and examination
+amendments, CGPA-conversion, holiday list) have no text layer, so they are stored as OCR'd Markdown
+(`*.md`) instead of the scanned PDF; everything else keeps its original format.
+
+| # | Document | Type | Pages | Covers |
+|---|---|---|---|---|
+| 1 | `reg_2019.pdf` | Regulation | 43 | UG (B.Tech.) academic regulations: credits, grading (Table 5.1), attendance, exams, make-up, registration limits (12–25 cr), CGPA, graduation |
+| 2 | `reg_pg_2022.pdf` | Regulation | 36 | PG (M.Tech./M.Sc.) regulations |
+| 3 | `reg_msr_2023.pdf` | Regulation | 6 | M.S. by Research regulations |
+| 4 | `amend_attendance_2024.md` | Circular (OCR) | 2 | 08 Jul 2024 attendance-policy amendment (delinks exam eligibility from attendance; 4-week absence rule) |
+| 5 | `amend_exam_2024.md` | Circular (OCR) | 2 | 08 Jul 2024 examination-policy amendment (Major exam 3 h, ≥40% weightage) |
+| 6 | `amend_continuation_2020.pdf` | Circular | 1 | 26 Oct 2020 revised continuation / graduation norms |
+| 7 | `circ_medtech_joint_2022.pdf` | Circular | 5 | Joint Medical-Technologies programme regulations |
+| 8 | `calendar_2026_27.pdf` | Calendar | 10 | Academic calendar AY 2026-27 (add/drop, Minor/Major exam dates) |
+| 9 | `calendar_summer_2026.pdf` | Calendar | 1 | Summer-term 2026 calendar |
+| 10 | `holidays_2026.md` | Calendar (OCR) | 2 | Institute holiday list 2026 |
+| 11 | `fee_2026_27.pdf` | Office order | 4 | Fee structure AY 2026-27 |
+| 12 | `scholarships.pdf` | Office order | 3 | UG/PG scholarships, fellowships, fee reimbursement |
+| 13 | `cgpa_conversion.md` | Office order (OCR) | 1 | CGPA-conversion and medium-of-instruction certificate |
+| 14 | `form_medical_certificate.pdf` | Form | 2 | Medical-certificate form (for leave / make-up) |
+| 15 | `btech_cse_structure.pdf` | Curriculum | 3 | B.Tech. CSE programme structure (credit buckets) |
+| 16 | `btech_cse_curriculum.pdf` | Curriculum | 74 | B.Tech. CSE curriculum and **course contents** |
+| 17 | `btech_ee_structure.pdf` | Curriculum | 2 | B.Tech. EE programme structure |
+| 18 | `btech_me_structure.pdf` | Curriculum | 3 | B.Tech. ME programme structure |
+| 19 | `btech_aids_structure.pdf` | Curriculum | 2 | B.Tech. AI & DS programme structure |
+| 20 | `common_courses.pdf` | Curriculum | 35 | Institute-wide common courses and contents (2nd year onwards) |
+| 21 | `hss_courses.pdf` | Curriculum | 138 | HSS course bouquet and course contents |
+| 22 | `non_graded_courses.pdf` | Curriculum | 5 | Non-graded institute-level courses |
+| 23 | `mtech_cse_curriculum.pdf` | Curriculum | 1 | M.Tech. CSE curriculum |
+| 24 | `mtech_ai_curriculum.pdf` | Curriculum | 1 | M.Tech. AI curriculum |
+| 25 | `web_ug_registration.md` | Web page | – | UG registration guidelines (HSS bouquets) |
+| 26 | `web_specialization_minor.md` | Web page | – | Specialization / minor / dual degree |
+| 27 | `web_engineering_science.md` | Web page | – | Engineering-science programmes |
+| 28 | `web_academic_programs.md` | Web page | – | List of academic programmes |
+| 29 | `web_academics_contact.md` | Web page | – | Office of Academic Affairs contact |
+
+**Structured tables (`data/`).**
+
+| File | Rows | Columns | Covers |
+|---|---|---|---|
+| `courses.csv` | 42 | `course_code, course_name, department, category, credits, slot, instructor, meetings, room` | Every course floated in Semester I, AY 2026-27 |
+| `slots.csv` | 40 | `slot, day, start_time, end_time` | The official B.Tech. slot system (lecture slots A, C, F, G, I, K, N and lab slots) |
+| `faculty.csv` | 38 | `name, department, email` | Instructor directory with official email IDs |
+
+Courses with no slot letter (e.g. Autonomous Systems, `IDL4010`) carry their fixed lecture times in the
+`meetings` column instead; `slot`/`meetings`/`room` are passed through to the agent by `lookup_course`.
+
+**Dummy / illustrative data.** No real student record is used anywhere. Course titles, levels, credits and
+faculty names/emails are taken from the public IITJ documents and department pages; course codes are real
+where the HSS document publishes them and otherwise synthetic (following the `<dept><L/P><level><nnn>`
+pattern), and **course-to-instructor assignments are illustrative**, not official teaching allocations.
+The only "personal" artefacts the system produces — email drafts in `outputs/drafts/` — use placeholders
+(`[Your Name]`, `[Roll Number]`) for the student's identity.
+
+**Provenance of the structured data:** adapted from the companion data-collection repository
+`Mohi1038/academic-helpdesk-agent` (same course/slot/faculty ground truth), re-shaped into the three-CSV
+schema this project's tools expect.
 
 ## 4. Evaluation method
 
@@ -84,15 +141,36 @@ so every WRONG verdict was checked by hand and corrected where needed (noted bel
 
 ## 5. Results
 
-TODO: paste the table from `eval/results/summary.md`.
+The evaluation runs locally against Ollama (it is not checked in because it needs the models). To
+reproduce, with Ollama serving and the index built (`python -m helpdesk.rag index`):
+
+```bash
+python eval/run_eval.py --model qwen3:8b   --mode multi  --runs 3
+python eval/run_eval.py --model llama3.1:8b --mode multi  --runs 3
+python eval/run_eval.py --model qwen3:8b   --mode single --runs 3
+python eval/run_eval.py --summary-only        # rebuilds eval/results/summary.md
+```
+
+Then paste the metrics table from `eval/results/summary.md` here. Columns: accuracy (in-scope),
+groundedness (correct citation), correct refusals, false refusals, routing accuracy (multi), email drafts
+saved, average seconds/question, and the count of questions whose outcome changed across the 3 runs.
+
+> Scoring note: 27 of the 30 questions are auto-scored. Three policy questions — **P05** does not apply
+> (replaced by a registration-limit question that *is* keyed), **P09** (conditions for an Incomplete grade)
+> and **P11** (first-year common curriculum) — have open-ended answers and are left with an empty answer
+> key, so their accuracy is reported as *unscored* and should be graded by hand; their groundedness
+> (citation of the expected document) is still scored automatically.
 
 ## 6. Findings
 
-TODO, to be written from the results:
-- qwen3 vs llama3.1: accuracy, tool-call reliability, routing, refusals, latency
-- single vs multi agent
-- questions whose answers changed across runs, and why
-- typical failure modes (retrieval miss, wrong filter, citation missing, over-refusal)
+To be written from the results above. Points to address:
+- **qwen3:8b vs llama3.1:8b** — accuracy, tool-call reliability, routing accuracy, refusals, latency.
+- **single vs multi agent** — does routing help or hurt accuracy/grounding; latency cost of the extra hop.
+- **Stability** — list the questions whose correct/grounded/refused verdict changed across the 3 runs
+  (`unstable questions` in `summary.md`) and explain why (non-deterministic retrieval ties, routing flips,
+  email recipient drift).
+- **Typical failure modes** — retrieval miss, wrong CSV filter, missing/incorrect citation, over-refusal of
+  in-scope questions, and (for weaker models) tool calls emitted as plain text instead of real calls.
 
 ## 7. Limitations and future work
 
