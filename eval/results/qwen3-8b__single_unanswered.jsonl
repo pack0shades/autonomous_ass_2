@@ -1,0 +1,21 @@
+{"time": "2026-10-29T20:42:19", "question": "What are the available dining options on the campus?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:42:27", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:42:34", "question": "What are the timings of the campus gym?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:42:38", "question": "What is the campus Wi-Fi password?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:42:41", "question": "What will the weather be like in Jodhpur tomorrow?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:42:46", "question": "What was the highest placement package offered last year?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:42:53", "question": "Write an email to the instructor of XYZ9999 asking for a makeup exam.", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:47:04", "question": "What are the available dining options on the campus?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:47:12", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:47:19", "question": "What are the timings of the campus gym?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:47:25", "question": "What is the campus Wi-Fi password?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:47:28", "question": "What will the weather be like in Jodhpur tomorrow?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:47:33", "question": "What was the highest placement package offered last year?", "reason": "out of scope: placement data is not included in academic documents"}
+{"time": "2026-10-29T20:47:40", "question": "Write an email to the instructor of XYZ9999 asking for a makeup exam.", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:51:52", "question": "What are the available dining options on the campus?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:52:00", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:52:07", "question": "What are the timings of the campus gym?", "reason": "out of scope: campus facilities"}
+{"time": "2026-10-29T20:52:13", "question": "What is the campus Wi-Fi password?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:52:15", "question": "What will the weather be like in Jodhpur tomorrow?", "reason": "agent could not answer (auto-logged)"}
+{"time": "2026-10-29T20:52:21", "question": "What was the highest placement package offered last year?", "reason": "out of scope: campus facilities, dining, hostel, transport, general knowledge"}
+{"time": "2026-10-29T20:52:27", "question": "Write an email to the instructor of XYZ9999 asking for a makeup exam.", "reason": "agent could not answer (auto-logged)"}

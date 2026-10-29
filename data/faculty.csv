@@ -1,39 +1,298 @@
-name,department,email
-Romi Banerjee,Computer Science and Engineering,romibanerjee@iitj.ac.in
-Sidharth Ranjan,Computer Science and Engineering,sranjan@iitj.ac.in
-Anoop Jain,Electrical Engineering,anoopj@iitj.ac.in
-S Srivatsa Srinivas,Economics,srivatsa@iitj.ac.in
-Ansita Aggarwal,School of Management and Entrepreneurship,ansitaaggarwal@iitj.ac.in
-Aditi Sethia,Computer Science and Engineering (jointly with Mathematics),aditisethia@iitj.ac.in
-Navinya Dilip Chimurkar,Environment and Sustainability Engineering,navinya@iitj.ac.in
-Vimal Raj Sharma,Computer Science and Engineering,vimalraj@iitj.ac.in
-Tanmay Inamdar,Computer Science and Engineering,taninamdar@iitj.ac.in
-Pallavi Jain,Computer Science and Engineering,pallavi@iitj.ac.in
-Palash Das,Computer Science and Engineering,palashdas@iitj.ac.in
-Nitin Awathare,Computer Science and Engineering,nitina@iitj.ac.in
-Mohit Kumar Jangid,Computer Science and Engineering,mjangid@iitj.ac.in
-Sumit Kalra,Computer Science and Engineering,sumitk@iitj.ac.in
-Gaurav Harit,Computer Science and Engineering,gharit@iitj.ac.in
-Mayank Vatsa,Computer Science and Engineering,mvatsa@iitj.ac.in
-Richa Singh,Computer Science and Engineering,richa@iitj.ac.in
-Anand Mishra,Computer Science and Engineering,mishra@iitj.ac.in
-Susil Kumar Mohanty,Computer Science and Engineering,susilmohanty@iitj.ac.in
-Deeksha Varshney,Computer Science and Engineering,deeksha@iitj.ac.in
-Sidharth Sharma,Computer Science and Engineering,sidharth@iitj.ac.in
-Dip Sankar Banerjee,Computer Science and Engineering,dipsankarb@iitj.ac.in
-Hardik Jain,Computer Science and Engineering,hardik.jain@iitj.ac.in
-Saurav Kumar,Electrical Engineering,sauravk@iitj.ac.in
-Niladri Sekhar Tripathy,Electrical Engineering,niladri@iitj.ac.in
-Binod Kumar,Electronics Engineering,binod@iitj.ac.in
-Dweepobotee Brahma,School of Artificial Intelligence and Data Science,dweepobotee@iitj.ac.in
-Kanak Yadav,School of Liberal Arts,kanakyadav@iitj.ac.in
-Bhaskar Kumar Kakati,School of Liberal Arts,bhaskar@iitj.ac.in
-Vidya Sarveswaran,School of Liberal Arts,vs@iitj.ac.in
-V Hari Narayanan,School of Liberal Arts,hari@iitj.ac.in
-K J George,School of Liberal Arts,kjg@iitj.ac.in
-Farhat Naz,School of Liberal Arts,farhat@iitj.ac.in
-Alok Ranjan,School of Liberal Arts,alok@iitj.ac.in
-Prasenjeet A Tribhuvan,School of Liberal Arts,prasenjeet@iitj.ac.in
-Sherin Sabu,School of Liberal Arts,sherinsabu@iitj.ac.in
-Tonisha Guin,School of Liberal Arts,tonisha@iitj.ac.in
-Akanksha Choudhary,Economics,akanksha@iitj.ac.in
+name,department,email,email_source
+Aashish Mathur,Electronics Engineering,aashish.mathur@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Abhay Gupta,Materials Engineering,abhay.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Abhinaba Lahiri,School of Artificial Intelligence and Data Science (AIDE),abhinaba.lahiri@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Abhishek Sarkar,Mathematics,abhishek.sarkar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Abhishek Sharma,Electronics Engineering,abhishek.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Abir Bhattacharyya,Materials Engineering,abir.bhattacharyya@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Aditi Sethia,Computer Science and Engineering (jointly with Mathematics),aditisethia@iitj.ac.in,faculty directory (collected)
+Ajay Agarwal,Electrical Engineering,ajay.agarwal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Akanksha Choudhary,Economics,akanksha@iitj.ac.in,faculty directory (collected)
+Akolekar Harshal Deepak,Mechanical Engineering,akolekar.harshal.deepak@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Akshay,Electronics Engineering,akshay@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Akshay Gupta,Civil and Infrastructure Engineering,akshay.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Alok Ranjan,School of Liberal Arts,alok@iitj.ac.in,faculty directory (collected)
+Aman Pathak,School of Management and Entrepreneurship (SME),aman.pathak@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amandeep Kaur,Electronics Engineering,amandeep.kaur@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ambesh Dixit,Mathematics,ambesh.dixit@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ambuj Kumar Gautam,Mechanical Engineering,ambuj.kumar.gautam@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amit Bhardwaj,Electrical Engineering,amit.bhardwaj@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amit Kumar Mishra,Bioscience and Bioengineering,amit.kumar.mishra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amit Kumar Rathi,Civil and Infrastructure Engineering,akrathi@iitj.ac.in,Time Table Committee sheet
+Amit Mukherjee,Physics,amit.mukherjee@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amit Sharma,Civil and Infrastructure Engineering,amit.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amitava Banerjee,Metallurgical & Materials Engineering,amitava@iitj.ac.in,Time Table Committee sheet
+Amreen Kaur Bains,Chemistry,amreen.kaur.bains@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Amrita Puri,Mechanical Engineering,amrita.puri@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anand Krishnan Plappally,Mechanical Engineering,anand.krishnan.plappally@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anand Mishra,Computer Science and Engineering,mishra@iitj.ac.in,faculty directory (collected)
+Ananya Debnath,Chemistry,ananya.debnath@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Angan Sengupta,Engineering Science,angan@iitj.ac.in,Time Table Committee sheet
+Angshuman Paul,Computer Science and Engineering,angshuman.paul@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anil Kumar,Mechanical Engineering,anil.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anil Kumar Tiwari,School of Artificial Intelligence and Data Science (AIDE),anil.kumar.tiwari@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ankita Sharma,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),ankita.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ankur Gupta,Electrical Engineering,ankur.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anoop Jain,Electrical Engineering,anoopj@iitj.ac.in,faculty directory (collected)
+Ansita Aggarwal,School of Management and Entrepreneurship,ansitaaggarwal@iitj.ac.in,faculty directory (collected)
+Anuj Kumar,Mathematics,anuj.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anuj Pal Kapoor,School of Management and Entrepreneurship (SME),anuj.pal.kapoor@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anupama Mohan,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),anupama.mohan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anurag Sharma,Aerospace Engineering / IDRP (Space Science Technology),anuragsharma@iitj.ac.in,Time Table Committee sheet
+Anusha S. B,Civil and Infrastructure Engineering,anusha.s.b@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Anushka Joshi,Computer Science and Engineering,anushka.joshi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Appala Naidu Gandi,Materials Engineering,appala.naidu.gandi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Arani Ali Khan,Electronics Engineering,arani.ali.khan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Arpit Arvind Khandelwal,Electrical Engineering,arpit.arvind.khandelwal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Arun Kumar R,Mechanical Engineering,arun.kumar.r@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Arun Kumar Singh,Electronics Engineering,arun.kumar.singh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ashish Pathak,Mechanical Engineering,ashish.pathak@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Atul Kumar,Chemistry,atul.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Atul Kumar Sharma,Mechanical Engineering,atulksharma@iitj.ac.in,Time Table Committee sheet
+Awathare Nitin Niranjan,Computer Science and Engineering,nitina@iitj.ac.in,Time Table Committee sheet
+Ayan Sadhukhan,Bioscience and Bioengineering,ayan.sadhukhan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+B M Krishna Mariserla,Physics,b.m.krishna.mariserla@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Babu Ranjan Thakur,Mechanical Engineering,babu.ranjan.thakur@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Balakumaran Chandrasekar,Bioscience and Bioengineering,balakumaran.chandrasekar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bandi Ravi Kumar,Electrical Engineering,bandi.ravi.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Barun Pratiher,Mechanical Engineering,barun.pratiher@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bharat Singh Rajpurohit,Electrical Engineering,bharat.singh.rajpurohit@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bhargab Chattopadhyay,School of Management and Entrepreneurship (SME),bhargab.chattopadhyay@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bhaskar Kumar Kakati,School of Liberal Arts,bhaskar@iitj.ac.in,faculty directory (collected)
+Bhivraj Suthar,School of Artificial Intelligence and Data Science (AIDE),bhivraj.suthar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bhupendra Reniwal,Electronics Engineering,bhupendra.reniwal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bhupendra Singh,Civil and Infrastructure Engineering,bhupendra.singh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bikash Santra,School of Artificial Intelligence and Data Science (AIDE),bikash.santra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Bimal Mandal,MTech Exe DCS,bimalmandal@iitj.ac.in,Time Table Committee sheet
+Binod Kumar,Electronics Engineering,binod@iitj.ac.in,faculty directory (collected)
+Brahadeesh Sankarnarayanan,Mathematics,brahadeesh.sankarnarayanan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Chandan Pandey,Mechanical Engineering,chandan.pandey@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Chandana N,Environmental and Sustainability Engineering,chandana.n@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Debanjan Guha Roy,Civil and Infrastructure Engineering,debanjan.guha.roy@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Debasis Das,IDRP (IoT & Applications),debasis@iitj.ac.in,Time Table Committee sheet
+Debasmita Dwibedi,Materials Engineering,debasmita.dwibedi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Deeksha Varshney,Computer Science and Engineering,deeksha@iitj.ac.in,faculty directory (collected)
+Deepak Kumar Saxena,MBA (Executive),saxenad@iitj.ac.in,Time Table Committee sheet
+Deepak Mishra,Computer Science and Engineering,deepak.mishra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Deepak Srivastav,School of Management and Entrepreneurship (SME),deepaksrivastav@iitj.ac.in,Time Table Committee sheet
+Deepak Swami,Civil and Infrastructure Engineering,deepak.swami@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Deepakkumar Maganlal Fulwani,Electrical Engineering,deepakkumar.maganlal.fulwani@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Devendra Singh Negi,Materials Engineering,devendra.singh.negi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Devi Prasad Dash,Economics,devi.prasad.dash@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dibyendu Kumar Sasmal,Chemistry,dibyendu.kumar.sasmal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dilpreet Kaur,Center for Education Technology (CET),dilpreet.kaur@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dinesh Kumar Ahirwar,Bioscience and Bioengineering,dinesh.kumar.ahirwar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dinesh Mohan Joshi,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),dinesh.mohan.joshi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dip Sankar Banerjee,Computer Science and Engineering,dipsankarb@iitj.ac.in,faculty directory (collected)
+Dipanjan Roy,School of Artificial Intelligence and Data Science (AIDE),dipanjan.roy@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Divya Saxena,School of Artificial Intelligence and Data Science (AIDE),divya.saxena@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Durgamadhab Mishra,Physics,durgamadhab.mishra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dushyant Kumar,Physics,dushyant.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Dweepobotee Brahma,School of Artificial Intelligence and Data Science,dweepobotee@iitj.ac.in,faculty directory (collected)
+Falak Vats,Civil and Infrastructure Engineering,falak.vats@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Farhat Naz,School of Liberal Arts,farhat@iitj.ac.in,faculty directory (collected)
+Gagan Vikram Kewalramani,Mechanical Engineering,gagan.vikram.kewalramani@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Gangawane Krunal Madhukar,Chemical Engineering,gangawane.krunal.madhukar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Gaurav Bhatnagar,Mathematics,gaurav.bhatnagar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Gaurav Harit,Computer Science and Engineering,gharit@iitj.ac.in,faculty directory (collected)
+Gaurav Vinodrao Vaidya,School of Design,gaurav.vinodrao.vaidya@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+George K. J,School of Liberal Arts,kjg@iitj.ac.in,faculty directory (collected)
+Gopakumar K. U,Humanities & Social Sciences / SOLA,gopakumar@iitj.ac.in,Time Table Committee sheet
+Gopal Dnyanba Gote,Mechanical Engineering,gopal.dnyanba.gote@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Gourhari Ghosh,Mechanical Engineering,gourhari.ghosh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Gurujegan M,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),gurujegan.m@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Hardik Jain,Computer Science and Engineering,hardik.jain@iitj.ac.in,faculty directory (collected)
+Hari Narayanan V,School of Liberal Arts,hari@iitj.ac.in,faculty directory (collected)
+Harshit Agarwal,Electrical Engineering,harshit.agarwal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Hema K,Chemistry,hema.k@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Himanshu Dave,Mechanical Engineering,himanshu.dave@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Himanshu Kumar,Electrical Engineering,himanshu.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Hirshikesh,Mechanical Engineering,hirshikesh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Indranil Banerjee,Bioscience and Bioengineering,indranil.banerjee@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Jai Narayan Tripathi,Electronics Engineering,jai.narayan.tripathi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Jaiveer Singh,MedTech Programs,jaiveer@iitj.ac.in,Time Table Committee sheet
+Jangam Bhushan Praveen,Economics,jangam.bhushan.praveen@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Jayant Kumar Mohanta,Mechanical Engineering,jayant.kumar.mohanta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Jitendra Kumar,Physics,jitendra.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Jitesh Mohnot,School of Management and Entrepreneurship (SME),jitesh.mohnot@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kanak Yadav,School of Liberal Arts,kanakyadav@iitj.ac.in,faculty directory (collected)
+Kaushalkumar Ashokbhai Desai,Mechanical Engineering,kaushalkumar.ashokbhai.desai@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kedar Umesh Dicholkar,School of Design,kedard@iitj.ac.in,Time Table Committee sheet
+Kiran Meena,Mathematics,kiran.meena@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kirankumar Rajshekhar Hiremath,Mathematics,kirankumar.rajshekhar.hiremath@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kirti Sankhala,CETSD/DESE,kirtisankhala@iitj.ac.in,Time Table Committee sheet
+Kothadia Hardikkumar Bhupendra,Mechanical Engineering,kothadia.hardikkumar.bhupendra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Koushambi Mitra,Chemistry,koushambi.mitra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kriti Goel,Mathematics,kriti.goel@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kuntal Som,Mathematics,kuntal.som@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Kunwar Aditya,Electrical Engineering,kunwar.aditya@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Lalit,Materials Engineering,lalit@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Lata Panwar,Physics,lata.panwar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Lavi Tyagi,Electronics Engineering,lavi.tyagi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Magesh Nagarajan,School of Management and Entrepreneurship (SME),magesh.nagarajan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manikandan Paranjothy,Chemistry,manikandan.paranjothy@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manish Aggarwal,School of Artificial Intelligence and Data Science (AIDE),manish.aggarwal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manish Narwaria,Electrical Engineering,manish.narwaria@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manisha Yadav,School of Management and Entrepreneurship (SME),manisha.yadav@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manoj Gupta,Electronics Engineering,manojgupta@iitj.ac.in,Time Table Committee sheet
+Manoj Kumar Jena,Chemical Engineering,manoj.kumar.jena@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Manu Kanchan,School of Management and Entrepreneurship (SME),manu.kanchan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mayank Gupta,Chemistry,mayank.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mayank Suman,Civil and Infrastructure Engineering,mayank.suman@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mayank Vatsa,Computer Science and Engineering,mvatsa@iitj.ac.in,faculty directory (collected)
+Md Abu Talhamainuddin Ansary,IDRP (Quantum Information and Computation),mdabutalha@iitj.ac.in,Time Table Committee sheet
+Meenu Chhabra,Bioscience and Bioengineering,meenu.chhabra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Milan Kumar Hazra,Chemistry,milan.kumar.hazra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mitali Mukerji,Bioscience and Bioengineering,mitali.mukerji@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mohit Kumar Jangid,Computer Science and Engineering,mjangid@iitj.ac.in,faculty directory (collected)
+Monika Dubey,Civil and Infrastructure Engineering,monika.dubey@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Monika Gupta,Chemistry,monika.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Monika Sinha,Physics,monika.sinha@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Monika Tanwar,School of Management and Entrepreneurship (SME),monika.tanwar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Moumita Mandal,Mathematics,moumita.mandal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Mrityunjay Rudrappa Doddamani,Mechanical Engineering,mrityunjay.rudrappa.doddamani@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Natasa Thoudam,IDRP (Digital Humanities),nthoudam@iitj.ac.in,Time Table Committee sheet
+Navchetan Awasthi,Computer Science and Engineering,navchetan.awasthi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Naveen Kumar Tailor,Physics,nktailor@iitj.ac.in,Time Table Committee sheet
+Navinya Dilip Chimurkar,Environment and Sustainability Engineering,navinya@iitj.ac.in,faculty directory (collected)
+Neha,School of Management and Entrepreneurship (SME),neha@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Neha Jain,Bioscience and Bioengineering,neha.jain@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nidhi Sharma,Robotics and Mobility Systems,nidhi.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nil Kamal Hazra,Mathematics,nilkamal@iitj.ac.in,Time Table Committee sheet
+Niladri Sekhar Tripathy,Electrical Engineering,niladri@iitj.ac.in,faculty directory (collected)
+Nipun Arora,Mechanical Engineering,nipun.arora@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nirmal Kumar Rana,Chemistry,nirmal.kumar.rana@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nishant Kumar,Electrical Engineering,nishant.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nitesh Arora,Mechanical Engineering,nitesh.arora@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nitin Bhatia,Electronics Engineering,nitin.bhatia@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Nitin Kumar Sharma,Materials Engineering,nitin.kumar.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Palash Das,Computer Science and Engineering,palashdas@iitj.ac.in,faculty directory (collected)
+Pallavi Jain,Computer Science and Engineering,pallavi@iitj.ac.in,faculty directory (collected)
+Pankaj Sheshrao Chavan,CETE,pankajchavan@iitj.ac.in,Time Table Committee sheet
+Pankaj Yadav,Bioscience and Bioengineering,pankaj.yadav@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Parag Arvind Deshpande,Chemical Engineering,parag.arvind.deshpande@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Parichay Patra,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),parichay.patra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Patnayakuni Ravi Prakash,Civil and Infrastructure Engineering,patnayakuni.ravi.prakash@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Payal Vyankat Dahiwale,Electrical Engineering,payal.vyankat.dahiwale@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Prabhat Kumar Jaiswal,Physics,prabhat.kumar.jaiswal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pradeep Kumar Dammala,Civil and Infrastructure Engineering,pradeep.kumar.dammala@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pradip Kumar Tewari,Chemical Engineering,pradip.kumar.tewari@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pradip Sasmal,Mathematics,pradip.sasmal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pradyumna Kumar Bishoyi,Electronics Engineering,pradyumna.kumar.bishoyi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pragati Pandey,Chemistry,pragati.pandey@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pranay Ranjan,Materials Engineering,pranay.ranjan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pranjal Protim Borah,School of Artificial Intelligence and Data Science (AIDE),pranjal.protim.borah@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Prasenjeet Tribhuvan,School of Liberal Arts,prasenjeet@iitj.ac.in,faculty directory (collected)
+Prashant Kumar Gupta,Chemical Engineering,guptapk@iitj.ac.in,Time Table Committee sheet
+Pratik Mazumder,Computer Science and Engineering,pratik.mazumder@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pratyaksh Karan,Mechanical Engineering,pratyaksh.karan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Praveenkumar Sappidi,Chemical Engineering,praveenkumar.sappidi@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Pritam Mahawar,Chemistry,pritam.mahawar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Priyabrata Rautray,School of Design,priyabrata.rautray@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Priyanka Singh,Bioscience and Bioengineering,priyanka.singh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Prodyut Ranjan Chakraborty,Mechanical Engineering,prodyut.ranjan.chakraborty@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Puneet Sharma,Mathematics,puneet.sharma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rachel Philip,Center for Education Technology (CET),rachel.philip@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rahul Chhibber,Mechanical Engineering,rahul.chhibber@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rahul Gera,Chemistry,rahul.gera@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rajat Gupta,Mathematics,rajat.gupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rajendra Nagar,MTech Exe AR-VR,rn@iitj.ac.in,Time Table Committee sheet
+Rajit Ranjan,Mechanical Engineering,rajit.ranjan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Rajlaxmi Chouhan,CETE,rajlaxmichouhan@iitj.ac.in,Time Table Committee sheet
+Ram Prakash,Physics,ram.prakash@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ramesh Kashinath Metre,Chemistry,ramesh.kashinath.metre@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ranju Mohan,Civil and Infrastructure Engineering,ranju.mohan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ravi Prakash Srivastava,Materials Engineering,ravi.prakash.srivastava@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ravi Yadav,Electrical Engineering,ravi.yadav@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ravindra Brammajyosula,Mechanical Engineering,ravindra.brammajyosula@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Ravindra Krushnaji Raut,Chemistry,ravindra.krushnaji.raut@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Raviraj Vankayala,Bioscience & Bioengineering,rvankayala@iitj.ac.in,Time Table Committee sheet
+Reetanjali Moharana,Physics,reetanjali.moharana@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Riby Abraham Boby,IDRP (Robotics and Mobility Systems),riby@iitj.ac.in,Time Table Committee sheet
+Richa Singh,Computer Science and Engineering,richa@iitj.ac.in,faculty directory (collected)
+Rohan Diliprao Erande,Chemistry,rohan.diliprao.erande@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Romi Banerjee,Computer Science and Engineering,romibanerjee@iitj.ac.in,faculty directory (collected)
+Roshan Kumar Hota,Mechanical Engineering,roshan.kumar.hota@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+S. Srivatsa Srinivas,Economics,srivatsa@iitj.ac.in,faculty directory (collected)
+Saakshi Dhanekar,Medical Technology Center,saakshi.dhanekar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sagar Kumar Verma,Physics,sagar.kumar.verma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sahil Gehlawat,Mathematics,sahil.gehlawat@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Samanwita Pal,Chemistry,samanwita.pal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sandeep Kumar Yadav,Electrical Engineering,sandeep.kumar.yadav@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sandip Murarka,Chemistry,sandip.murarka@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sanhita Das,Civil and Infrastructure Engineering,sanhita.das@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Santosh Mogurampelly,Physics,santosh.mogurampelly@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Saran Aadhar,Civil and Infrastructure Engineering,saran.aadhar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sarath Chandra Reddy Nallala,Civil and Infrastructure Engineering,sarath.chandra.reddy.nallala@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Satyajit Sahu,Physics,satyajit.sahu@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Saurabh Sanjay Nene,Materials Engineering,saurabh.sanjay.nene@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Saurav Kumar,Electrical Engineering,sauravk@iitj.ac.in,faculty directory (collected)
+Shahab Ahmad,Physics,shahab.ahmad@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shaik Abdul Gafoor,Electrical Engineering,shaik.abdul.gafoor@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shaily Verma,Mathematics,shaily.verma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shankar Manoharan,Bioscience and Bioengineering,shankar.manoharan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sherin Sabu,School of Liberal Arts,sherinsabu@iitj.ac.in,faculty directory (collected)
+Sheriya Sareen,Center for Education Technology (CET),sheriya.sareen@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shilpa Dang,School of Artificial Intelligence and Data Science (AIDE),shilpa.dang@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shipra Bajpai,Materials Engineering,shipra.bajpai@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shiv Kumar Verma,School of Design,shiv.kumar.verma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shobhana Singh,Energy and Automotive Engineering,shobhana.singh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shrutidhara Sarma,Mechanical Engineering,shrutidhara.sarma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shuvajit Mukherjee,Civil and Infrastructure Engineering,shuvajit.mukherjee@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Shyam Kumar Banjare,Chemistry,shyam.kumar.banjare@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Siddharth Srivastava,Medical Technology Center,siddharth.srivastava@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sidharth Ranjan,Computer Science and Engineering,sranjan@iitj.ac.in,faculty directory (collected)
+Sidharth Sharma,Computer Science and Engineering,sidharth@iitj.ac.in,faculty directory (collected)
+Sk Md Hasan,Materials Engineering,sk.md.hasan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Soni,Center for Education Technology (CET),soni@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Souryabrata Mohapatra,School of Artificial Intelligence and Data Science (AIDE),souryabrata.mohapatra@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sreedevi D,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),sreedevi.d@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sreejith Krishnan,Civil and Infrastructure Engineering,sreejith.krishnan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Srijan Sengupta,Materials Engineering,srijan.sengupta@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Srijit Biswas,Energy and Automotive Engineering,sbiswas@iitj.ac.in,Time Table Committee sheet
+Srivatsa N.S,Quantum Information and Computation,srivatsa.n.s@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Subham Jain,Civil and Infrastructure Engineering,subham.jain@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Subhash Bhagat,School of Artificial Intelligence and Data Science (AIDE),subhash.bhagat@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Subhashish Banerjee,Physics,subhashish.banerjee@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Subrata Chakraborty,Chemistry,subrata@iitj.ac.in,Time Table Committee sheet
+Sucharita Dey,Bioscience and Bioengineering,sucharita.dey@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Suchetana Chakraborty,Computer Science and Engineering,suchetana.chakraborty@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sudipta Bhattacharyya,Bioscience and Bioengineering,sudipta.bhattacharyya@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sudipto Mukhopadhyay,Mechanical Engineering,sudipto.mukhopadhyay@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sukhendu Ghosh,Mathematics,sukhendu.ghosh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Suman Dhaka,School of Liberal Arts (SoLA) / Humanities and Social Sciences (HSS),suman.dhaka@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sumana Som,School of Design,sumana.som@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sumeet Rajesh Khanna,Materials Engineering,sumeet.rajesh.khanna@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sumit Kalra,Computer Science and Engineering,sumitk@iitj.ac.in,faculty directory (collected)
+Sumit Kamal,Chemical Engineering,sumit.kamal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sumit Popat Parvate,Chemical Engineering,sumit.popat.parvate@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sunil Kumar Khijwania,Physics,sunil.kumar.khijwania@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sunil Kumar Lohar,Digital Humanities,sunil.kumar.lohar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sunita,Physics,sunita@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Suraj Srivastava,Electrical Engineering,suraj.srivastava@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Surajit Ghosh,Bioscience and Bioengineering,surajit.ghosh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Suresh Sarkar,Chemistry,suresh.sarkar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Suril Vijaykumar Shah,Robotics and Mobility Systems,suril.vijaykumar.shah@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Sushmita Jha,IDRP (Smart Healthcare),sushmitajha@iitj.ac.in,Time Table Committee sheet
+Susil Kumar Mohanty,Computer Science and Engineering,susilmohanty@iitj.ac.in,faculty directory (collected)
+Susmita Panda,Civil and Infrastructure Engineering,susmita.panda@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Swati Jindal,Chemistry,swati.jindal@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Tanmay Nitin Inamdar,Computer Science and Engineering,taninamdar@iitj.ac.in,faculty directory (collected)
+Tara Chand Kumawat,Chemical Engineering,tara.chand.kumawat@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Tekcham Gishan Singh,Civil and Infrastructure Engineering,tekcham.gishan.singh@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Tonisha Guin,School of Liberal Arts,tonisha@iitj.ac.in,faculty directory (collected)
+Trishikhi Raychaudhury,Civil and Infrastructure Engineering,trishikhi.raychaudhury@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Tuhina Mukherjee,Mathematics,tuhina.mukherjee@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+V. Narayanan,Quantum Information and Computation,v.narayanan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Varanasi Santhosh Kumar,Chemical Engineering,varanasi.santhosh.kumar@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Venkat Ram Reddy Ganuthula,School of Management and Entrepreneurship (SME),venkat.ram.reddy.ganuthula@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Vidya Sarveswaran,School of Liberal Arts,vs@iitj.ac.in,faculty directory (collected)
+Vignesh Muralidharan,School of Artificial Intelligence and Data Science (AIDE),vignesh.muralidharan@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Vikky Anand,Chemical Engineering,vikky.anand@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Vikramsingh Rajendrasingh Thakur,Materials Engineering,vikramsingh.rajendrasingh.thakur@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Vimal Raj Sharma,Computer Science and Engineering,vimalraj@iitj.ac.in,faculty directory (collected)
+Vineeth V,Electrical Engineering,vineeth@iitj.ac.in,Time Table Committee sheet
+Vinod Vijay Kumar,CTFP,vinodvk@iitj.ac.in,Time Table Committee sheet
+Vivek Chandrakant Wakchaure,Chemistry,vivek.chandrakant.wakchaure@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Yashaswi Verma,Computer Science and Engineering,yashaswi.verma@dummy.iitj.ac.in,dummy placeholder (real address not collected)
+Yogiraj Sargam,Civil and Infrastructure Engineering,yogiraj.sargam@dummy.iitj.ac.in,dummy placeholder (real address not collected)

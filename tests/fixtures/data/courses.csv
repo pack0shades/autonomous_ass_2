@@ -1,6 +1,8 @@
-course_code,course_name,department,category,credits,slot,instructor
-CSL7570,Autonomous Systems,Computer Science and Engineering,Program Elective,3,B,Dr. Test Instructor
-HSL4010,Ethics in Technology,Humanities and Social Sciences,HSS Elective,3,C,Dr. Alpha Beta
-HSL4020,Indian Philosophy,Humanities and Social Sciences,HSS Elective,3,D,Dr. Gamma Delta
-HSL2010,Introduction to Economics,Humanities and Social Sciences,HSS Elective,3,C,Dr. Alpha Beta
-CSL1010,Introduction to Programming,Computer Science and Engineering,Core,4,A,Dr. Test Instructor
+course_code,course_name,department,course_type,ltp,credits,slot,instructor,co_instructors,room,students_registered,note
+CSL7650,Autonomous Systems,Computer Science and Engineering,Lecture,3-0-0,3,B,Dr. Test Instructor,,LHC 106,10,
+CSL7570,Autonomous Systems,Computer Science and Engineering,Lecture,3-0-0,3,B,Dr. Test Instructor,,LHC 106,10,Alias of CSL7650 added for the assignment's example prompts
+HSL4010,Ethics in Technology,Humanities and Social Sciences,Lecture,3-0-0,3,C,Dr. Alpha Beta,Dr. Gamma Delta,LHC 101,20,
+HSL4020,Indian Philosophy,Humanities and Social Sciences,Lecture,3-0-0,3,D (Wed),Dr. Gamma Delta,,LHC 102,20,
+HSP4030,Philosophy Lab,Humanities and Social Sciences,Practical/Lab,0-0-2,1,L2,Dr. Gamma Delta,,LHC 103,20,
+HSL2010,Introduction to Economics,Humanities and Social Sciences,Lecture,3-0-0,3,C,Dr. Alpha Beta,,LHC 104,20,
+CSL1010,Introduction to Programming,Computer Science and Engineering,Lecture,3-0-2,4,A,Dr. Placeholder Person,,LHC 105,50,

@@ -47,9 +47,9 @@ There is also a **single-agent** baseline (`--mode single`) with the same six to
 | Tool | What it does | Data |
 |---|---|---|
 | `search_documents(query)` | Hybrid retrieval (Chroma dense vectors + BM25, fused with reciprocal rank fusion); returns top-5 chunks with file name and page | `docs/raw/*` |
-| `lookup_course(query)` | Course by code or (fuzzy) name, with slot, slot day/times and instructor | `data/courses.csv`, `data/slots.csv` |
-| `list_courses(department, level, category)` | Count and list the courses floated, e.g. 400-level Humanities electives | `data/courses.csv` |
-| `get_instructor_email(course_or_name)` | Instructor(s) of a course and their email IDs | `data/courses.csv`, `data/faculty.csv` |
+| `lookup_course(query)` | Course by code or (fuzzy) name, with slot, slot day/times, room, instructor and co-instructors; suggests similar codes when not found | `data/courses.csv`, `data/slots.csv` |
+| `list_courses(department, level, course_type)` | Count and list the courses floated, e.g. 400-level Humanities courses (alias rows excluded) | `data/courses.csv` |
+| `get_instructor_email(course_or_name)` | Instructor and co-instructors of a course and their email IDs (flags dummy addresses) | `data/courses.csv`, `data/faculty.csv` |
 | `save_email_draft(to, subject, body)` | Saves the draft for the student to review; **never sends** it | `outputs/drafts/` |
 | `log_unanswered_question(question, reason)` | Appends to the human hand-off log | `logs/unanswered.jsonl` |
 
@@ -71,39 +71,53 @@ ollama pull qwen3:8b           # main model
 ollama pull llama3.1:8b        # comparison model
 ```
 
-## 1. Put the documents in place
+## 1. Documents and data
 
-**Unstructured documents go in `docs/raw/`**: PDF, DOCX, TXT, MD, HTML or CSV, and subfolders are fine.
-The file name is what gets cited, so use descriptive names (e.g. `UG_Academic_Regulations_2024.pdf`, not
-`doc1.pdf`). Suggested set (20–30 files):
+**Unstructured documents are in `docs/raw/`** (30 files: PDF and Markdown; `docs/manifest.csv` records
+the source URL and fetch date of each). The file name is what gets cited. To add documents, drop PDF,
+DOCX, TXT, MD, HTML or CSV files there and re-index. Scanned PDFs have no text layer: the indexer flags
+them (`WARNING: ... scanned PDF?`), so OCR them first (e.g. `ocrmypdf in.pdf out.pdf`).
 
-- UG (B.Tech.) academic regulations / rule book, and PG regulations if available
-- B.Tech. curriculum / programme structure (credits per category: core, programme electives, open electives, HSS)
-- Course contents / syllabi (at least the courses used in the questions, e.g. CSL7570 Autonomous Systems)
-- Academic calendar for the current semester
-- Semester timetable (PDF) and slot chart
-- Course registration guidelines / add-drop notices
-- Recent office orders and circulars (attendance, makeup exams, leave, grading, etc.)
-- Faculty directory (with email IDs replaced by dummy values if you prefer)
+**Structured tables in `data/` are generated** from the official AY 2026-27 Semester I slot-system
+workbook by one script:
 
-Scanned PDFs have no text layer. The indexer flags them (`WARNING: ... scanned PDF?`), so run OCR first,
-e.g. `ocrmypdf in.pdf out.pdf`. Excel files: export to CSV.
+```bash
+python data/build_tables.py   # data/source/*.xlsx -> data/courses.csv, slots.csv, faculty.csv
+                              #                    + docs/raw/timetable_slot_system_2026_27.md
+```
 
-**Structured tables go in `data/`**, with exactly these columns (the header-only templates are already
-there; extra columns are allowed and are passed through to the agent):
-
-| File | Required columns | Example row |
+| Output | Rows | Built from |
 |---|---|---|
-| `data/courses.csv` | `course_code,course_name,department,category,credits,slot,instructor` | `CSL7570,Autonomous Systems,Computer Science and Engineering,Program Elective,3,B,Dr. A. Kumar` |
-| `data/slots.csv` | `slot,day,start_time,end_time` (one row per class meeting) | `B,Monday,09:00,09:55` |
-| `data/faculty.csv` | `name,department,email` | `Dr. A. Kumar,Computer Science and Engineering,akumar@iitj.ac.in` |
+| `data/courses.csv` | 613 | "Classroom Allocation" sheet, one row per course code (sections, tutorials and rooms merged) |
+| `data/slots.csv` | 81 | "Slot System" grid (merged cells give the 2-hour lab slots L1–L10, M1–M10) and the M.Tech. Executive evening/weekend slots |
+| `data/faculty.csv` | 297 | every instructor and co-instructor in the timetable, with emails from `data/source/faculty_emails_collected.csv` and the "Time Table Committee Members" sheet |
+| `docs/raw/timetable_slot_system_2026_27.md` | – | the other sheets (slot rules, Minor exam timetable, common-course slots, committee, minor/specialization coordinators) as text, so RAG can cite them |
 
-- `courses.csv` covers the **current semester's** courses (the timetable), one row per course.
-- The course level comes from the first digit of the course number: `HSL4010` is 400-level, `CSL7570` is 700-level.
-- `category` is free text that is matched by substring: "Program Elective", "Open Elective" and "HSS Elective" all match "elective".
-- `slot` may list several slots (`B, B1`). `instructor` may list several people separated by `;`.
-- Names in `instructor` should match `faculty.csv` names (titles such as Dr./Prof. and small typos are tolerated).
-- Personal data (student names, phone numbers) should be replaced with dummy values.
+Columns:
+
+- `courses.csv`: `course_code, course_name, department, course_type, ltp, credits, slot, instructor, co_instructors, room, students_registered, note`
+- `slots.csv`: `slot, day, start_time, end_time`
+- `faculty.csv`: `name, department, email, email_source`
+
+Notes on the data:
+
+- **`course_type`** comes from the third letter of the course code, as defined in Table 4.3 of the UG
+  regulations (L = Lecture, P = Practical/Lab, D = Project, N = Non-graded, T = Thesis, ...). The
+  timetable has **no core/elective classification** (it depends on the student's programme), so the
+  agent says so when asked about "electives".
+- The **course level** is the first digit of the code's number (`LAL4070` is 400-level, `CSL7650` is 700-level).
+- A `slot` such as `D (Wed)` means only the Wednesday meeting of slot D. `lookup_course` filters the
+  timings accordingly and always returns the raw slot text too.
+- The School of Liberal Arts is labelled "School of Liberal Arts (SoLA) / Humanities and Social Sciences
+  (HSS)", the name the workbook's committee sheet uses, so questions about "Humanities" find it.
+- **`CSL7570` is an alias row** for `CSL7650` Autonomous Systems. The assignment's example prompts use
+  CSL7570, but the official timetable lists the course as CSL7650. The row carries a `note` saying so,
+  and it is excluded from all course counts.
+- **Emails:** 67 faculty have an address from a real source (37 from the collected directory, 30 from the
+  committee sheet; `email_source` says which). The other 230 have **dummy placeholders** (`firstname.lastname@dummy.iitj.ac.in`,
+  `email_source = dummy placeholder`), as the assignment allows. The email agent warns the student
+  whenever it uses one.
+- No student data is used. Drafts use placeholders such as `[Your Name]` and `[Roll Number]`.
 
 ## 2. Index the documents
 
@@ -159,17 +173,22 @@ and email requests, out-of-scope questions, and an email for a non-existent cour
 - `expected_source`: file name(s), at least one of which must be cited (groundedness)
 - `expected_agent`: the specialist(s) that should handle it (routing)
 - `should_refuse`: the correct behaviour is "I don't know" plus logging the question
+- `expects_draft`: the request asks for a draft, so `save_email_draft` must actually be called
 
 ```bash
 python eval/run_eval.py --model qwen3:8b    --mode multi  --runs 3
 python eval/run_eval.py --model llama3.1:8b --mode multi  --runs 3
 python eval/run_eval.py --model qwen3:8b    --mode single --runs 3   # single vs multi agent
 python eval/run_eval.py --only P01 S03 --runs 1                      # quick check
+python eval/run_eval.py --summary-only                               # re-score stored answers, rebuild summary
 ```
 
 Each configuration writes `eval/results/<model>__<mode>.json` (every answer, tool call, latency and
 score) plus its own refusal log and drafts. `eval/results/summary.md` compares all configurations and
-gives a per-question, per-run table that flags **questions whose outcome changed across runs**.
+gives a per-question, per-run table that flags **questions whose verdict or wording changed across runs**.
+`eval/results/v1_example_citation/` keeps the first full run, before the citation-prompt fix described in
+the report. Results: see [REPORT.md](REPORT.md) §5–6. In short, qwen3:8b multi-agent scored 82.6%
+accuracy and refused 100% of out-of-scope prompts correctly; llama3.1:8b scored 65.2%.
 
 Deterministic tool checks (no LLM): `python tests/test_tools.py`.
 
@@ -182,7 +201,8 @@ helpdesk/tools.py    the six agent tools
 helpdesk/agent.py    prompts, single agent, multi-agent orchestrator + specialists (root_agent for adk web)
 helpdesk/chat.py     runner (Helpdesk.ask), refusal detection/auto-logging, CLI
 eval/                questions.json, run_eval.py, results/
-docs/raw/            your documents        data/  timetable + faculty CSVs
+docs/raw/            the 30 indexed documents; docs/manifest.csv = provenance
+data/build_tables.py builds data/*.csv (+ the timetable .md) from data/source/ (official xlsx, collected emails)
 tests/               tool self-check with synthetic fixtures
 REPORT.md            findings
 ```

@@ -1,4 +1,5 @@
-name,department,email
-Dr. Test Instructor,Computer Science and Engineering,test.instructor@example.edu
-Dr. Alpha Beta,Humanities and Social Sciences,alpha.beta@example.edu
-Dr. Gamma Delta,Humanities and Social Sciences,gamma.delta@example.edu
+name,department,email,email_source
+Dr. Test Instructor,Computer Science and Engineering,test.instructor@example.edu,faculty directory (collected)
+Dr. Alpha Beta,Humanities and Social Sciences,alpha.beta@example.edu,faculty directory (collected)
+Dr. Gamma Delta,Humanities and Social Sciences,gamma.delta@example.edu,faculty directory (collected)
+Placeholder Person,Computer Science and Engineering,placeholder.person@dummy.iitj.ac.in,dummy placeholder (real address not collected)

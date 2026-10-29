@@ -25,7 +25,15 @@ SUPPORTED = {".pdf", ".docx", ".txt", ".md", ".html", ".htm", ".csv"}
 
 def _load_pdf(path):
     from pypdf import PdfReader
-    return [(i + 1, page.extract_text() or "") for i, page in enumerate(PdfReader(path).pages)]
+    pages = []
+    for i, page in enumerate(PdfReader(path).pages):
+        text = page.extract_text() or ""
+        lines = [ln for ln in text.splitlines() if ln.strip()]
+        # some PDFs (e.g. reg_2019.pdf) extract one word per line; join those back into running text
+        if lines and sum(len(ln.split()) for ln in lines) / len(lines) < 2:
+            text = re.sub(r"\s+", " ", text)
+        pages.append((i + 1, text))
+    return pages
 
 
 def _load_docx(path):

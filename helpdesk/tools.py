@@ -39,16 +39,34 @@ def _level(code):
     return int(m.group()) * 100 if m else 0
 
 
-def _with_slot_times(course, slots):
-    names = [s for s in re.split(r"[^A-Za-z0-9]+", course.get("slot", "")) if s]
-    return {**course, "level": _level(course["course_code"]),
-            "slot_timings": [s for s in slots if s.get("slot", "").upper() in {n.upper() for n in names}]}
+DAY_ABBR = {"mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday", "fri": "Friday",
+            "sat": "Saturday", "sun": "Sunday"}
+
+
+def _slot_timings(slot_text, slots):
+    """'E' -> every E meeting; 'D (Wed)' -> only the Wednesday D meeting; 'R (Thu 6 - 7 PM)' -> the
+    bracket gives the time itself, so only the slot's Thursday rows are returned (the raw text is also kept)."""
+    out = []
+    for section in [x.strip() for x in slot_text.split(";") if x.strip()]:
+        m = re.match(r"([^(]*)(?:\((.*)\))?", section)
+        names = {n.upper() for n in re.split(r"[\s,/]+", m.group(1)) if n}
+        days = {DAY_ABBR[d[:3].lower()] for d in re.findall(r"[A-Za-z]+", m.group(2) or "") if d[:3].lower() in DAY_ABBR}
+        out += [{**s, "section": section} for s in slots
+                if s["slot"].upper() in names and (not days or s["day"] in days)]
+    return out
+
+
+def _public(course, slots):
+    c = {k: v for k, v in course.items() if v}
+    c["level"] = _level(course["course_code"])
+    c["slot_timings"] = _slot_timings(course.get("slot", ""), slots)
+    return c
 
 
 def lookup_course(query: str) -> dict:
     """Look up a course offered this semester by course code (e.g. "CSL7570") or by course name
-    (e.g. "Autonomous Systems"). Returns its name, department, category, credits, slot, slot timings
-    (days and times) and instructor, from the semester timetable.
+    (e.g. "Autonomous Systems"). Returns its name, department, course type, L-T-P, credits, slot, slot
+    timings (days and times), room, instructor and co-instructors, from the semester timetable.
 
     Args:
         query: Course code or (part of) the course name.
@@ -64,34 +82,48 @@ def lookup_course(query: str) -> dict:
         close = difflib.get_close_matches(q.lower(), [c["course_name"].lower() for c in courses], n=3, cutoff=0.6)
         hits = [c for c in courses if c["course_name"].lower() in close]
     if not hits:
-        return {"found": False, "message": f"No course matching '{query}' in the timetable.", "source": "courses.csv"}
-    return {"found": True, "courses": [_with_slot_times(c, slots) for c in hits[:5]],
+        similar = difflib.get_close_matches(_code(q), [c["course_code"] for c in courses], n=3, cutoff=0.7)
+        return {"found": False, "message": f"No course matching '{query}' in the semester timetable.",
+                "similar_course_codes": similar, "source": "courses.csv (semester timetable)"}
+    return {"found": True, "courses": [_public(c, slots) for c in hits[:5]],
             "source": "courses.csv (semester timetable), slots.csv (slot timings)"}
 
 
-def list_courses(department: str = "", level: int = 0, category: str = "") -> dict:
+def list_courses(department: str = "", level: int = 0, course_type: str = "") -> dict:
     """List and count the courses floated this semester, filtered by department, course level and/or
-    category. Use this for questions like "how many 400 level electives are offered by Humanities".
+    course type. Use this for questions like "how many 400 level courses does Humanities offer".
+    Note: the timetable does not mark courses as core or elective (that depends on the student's programme).
 
     Args:
-        department: Department name or part of it, e.g. "Humanities", "Computer Science". Empty = all.
-        level: Course level such as 100, 200, 300, 400, 500, 600, 700 (taken from the first digit of the
-            course code number, so CSL7570 is a 700 level course). 0 = all levels.
-        category: Course category or part of it, e.g. "elective", "core", "open elective". Empty = all.
+        department: Department name or part of it, e.g. "Humanities", "Computer Science", "Physics". Empty = all.
+        level: Course level such as 100, 200, 300, 400, 500, 600, 700, 800 (the first digit of the number in
+            the course code, so CSL7650 is a 700 level course). 0 = all levels.
+        course_type: "Lecture", "Practical/Lab", "Project", "Thesis", "Non-graded", "Seminar". Empty = all.
     """
-    rows = _read("courses.csv")
+    rows = [r for r in _read("courses.csv") if not r.get("note", "").startswith("Alias")]
     if department:
         d = department.lower()
         rows = [r for r in rows if d in r.get("department", "").lower()]
     if level:
         rows = [r for r in rows if _level(r["course_code"]) == int(level)]
-    if category:
-        cat = category.lower()
-        rows = [r for r in rows if cat in r.get("category", "").lower()]
-    return {"count": len(rows),
-            "courses": [{k: r.get(k, "") for k in ("course_code", "course_name", "department", "category", "credits")}
-                        for r in rows],
-            "filters": {"department": department, "level": level, "category": category},
+    note = ""
+    types = {r.get("course_type", "").lower() for r in rows} - {""}
+    t = course_type.strip().lower()
+    if t in ("all", "any", "*"):
+        t = ""
+    if t and not any(t in x for x in types):  # e.g. "elective": not recorded in the timetable
+        note = (f"course_type '{course_type}' is not recorded in the timetable, so that filter was ignored. "
+                f"Recorded types: {sorted(types)}. The timetable does not mark courses as core or elective.")
+        t = ""
+    if t:
+        rows = [r for r in rows if t in r.get("course_type", "").lower()]
+    by_dept = {}
+    for r in rows:
+        by_dept[r["department"]] = by_dept.get(r["department"], 0) + 1
+    return {"count": len(rows), "count_by_department": by_dept,
+            "courses": [{k: r.get(k, "") for k in ("course_code", "course_name", "department", "course_type", "credits")}
+                        for r in rows[:60]],
+            "filters": {"department": department, "level": level, "course_type": t}, **({"note": note} if note else {}),
             "source": "courses.csv (semester timetable)"}
 
 
@@ -100,38 +132,45 @@ def _norm_name(name):
     return " ".join(re.findall(r"[a-z]+", name))
 
 
+def _contact(f, person, role, course=None):
+    out = {"instructor": f["name"] if f else person, "role": role, "email": f["email"] if f else None,
+           "department": f.get("department", "") if f else ""}
+    if course:
+        out.update(course_code=course["course_code"], course_name=course["course_name"])
+    if f and "dummy" in f.get("email_source", ""):
+        out["email_warning"] = "Placeholder address (the real email ID was not collected); the student must verify it."
+    return out
+
+
 def get_instructor_email(course_or_name: str) -> dict:
-    """Find the instructor(s) of a course and their official email IDs from the faculty directory.
+    """Find the instructor(s) of a course and their email IDs from the faculty directory.
 
     Args:
         course_or_name: A course code (e.g. "CSL7570"), a course name, or a faculty member's name.
     """
-    faculty = _read("faculty.csv")
-    by_name = {_norm_name(f["name"]): f for f in faculty}
+    by_name = {_norm_name(f["name"]): f for f in _read("faculty.csv")}
 
     def find(person):
         n = _norm_name(person)
         if n in by_name:
             return by_name[n]
-        close = difflib.get_close_matches(n, list(by_name), n=1, cutoff=0.8)
+        close = difflib.get_close_matches(n, list(by_name), n=1, cutoff=0.85)
         return by_name[close[0]] if close else None
 
-    f = find(course_or_name)
-    if f:
-        return {"found": True, "instructors": [{"instructor": f["name"], "email": f["email"],
-                                                "department": f.get("department", "")}], "source": "faculty.csv"}
     course = lookup_course(course_or_name)
     if course["found"]:
         out = []
         for c in course["courses"]:
-            for person in [p for p in re.split(r";|,|/|\band\b", c.get("instructor", "")) if p.strip()]:
-                f = find(person)
-                out.append({"course_code": c["course_code"], "course_name": c["course_name"],
-                            "instructor": person.strip(), "email": f["email"] if f else None,
-                            "department": f.get("department", "") if f else ""})
+            for role, field in (("instructor", "instructor"), ("co-instructor", "co_instructors")):
+                for person in [p.strip() for p in c.get(field, "").split(";") if p.strip()]:
+                    out.append(_contact(find(person), person, role, c))
         return {"found": any(o["email"] for o in out), "instructors": out,
                 "source": "courses.csv (instructor), faculty.csv (email)"}
-    return {"found": False, "message": f"No course or faculty member matching '{course_or_name}'."}
+    f = find(course_or_name)
+    if f:
+        return {"found": True, "instructors": [_contact(f, f["name"], "faculty")], "source": "faculty.csv"}
+    return {"found": False, "message": f"No course or faculty member matching '{course_or_name}'.",
+            "similar_course_codes": course.get("similar_course_codes", [])}
 
 
 def save_email_draft(to: str, subject: str, body: str) -> dict:
